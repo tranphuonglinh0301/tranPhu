@@ -200,7 +200,11 @@ head(df1)
 head(df2)
 head(df3)
 head(df4)
-sqlSave(conn, df1, "CROP_DATA", append=TRUE, fast=FALSE, rownames=FALSE, colnames=FALSE, verbose=FALSE)
-sqlSave(conn, df2, "FARM_PRICES", append=TRUE, fast=FALSE, rownames=FALSE, colnames=FALSE, verbose=FALSE)
-sqlSave(conn, df3, "MONTHLY_FX", append=TRUE, fast=FALSE, rownames=FALSE, colnames=FALSE, verbose=FALSE)
-sqlSave(conn, df4, "DAILY_FX", append=TRUE, fast=FALSE, rownames=FALSE, colnames=FALSE, verbose=FALSE)
+sqlSave(conn, df1, "CROP_DATA", append = TRUE)
+sqlSave(conn, df2, "FARM_PRICES", append = TRUE)
+sqlSave(conn, df3, "DAILY_FX", append = TRUE)
+sqlSave(conn, df4, "MONTHLY_FX", append = TRUE)
+
+#Solution3
+query <- "SELECT COUNT(CD_ID) FROM FARM_PRICES"
+sqlQuery(conn, query)

@@ -207,4 +207,5 @@ sqlSave(conn, df4, "MONTHLY_FX", append = TRUE)
 
 #Solution3
 query <- "SELECT COUNT(CD_ID) FROM FARM_PRICES"
-sqlQuery(conn, query)
+result <- sqlQuery(conn, query)
+print(result)
